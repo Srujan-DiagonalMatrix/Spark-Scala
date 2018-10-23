@@ -1,5 +1,9 @@
 package dataset
 
+/*
+Creating DataSet from a complex nested class.
+*/
+
 object ComplexTypes {
 
   case class Point(x: Double, y: Double)
@@ -10,7 +14,7 @@ object ComplexTypes {
 
   def main(args: Array[String]): Unit = {
 
-    
+
 
 
   }
