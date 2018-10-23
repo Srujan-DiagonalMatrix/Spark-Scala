@@ -1,0 +1,40 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Scala template
+*.class
+*.log
+
+project/target/streams/compile/compileIncSetup/
+src/test/
+target/scala-2.12/
+target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/
+target/streams/$global/update/$global/streams/update_cache_2.12/
+
+.idea
+*.cache
+*.class
+*.jar
+### Java template
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.cache.json
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
