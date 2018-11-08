@@ -59,10 +59,39 @@ object Basic {
 +--------+--------------------+-------------+---------------+------------+----------------+-----------------+-------------+-------------------+--------------------+
     */
 
+    //Show first 5 records
+    orders.show(5)
+
+    //Statistics for numeric columns
+    orders.describe("order_itm_sub_total", "order_itm_prod_price").show()
+    /*
+    +-------+-------------------+--------------------+
+    |summary|order_itm_sub_total|order_itm_prod_price|
+    +-------+-------------------+--------------------+
+    |  count|             172198|              172198|
+    |   mean|  199.3206653387383|  133.75906624931835|
+    | stddev|  112.7430372140081|  118.55893257266723|
+    |    min|               9.99|                9.99|
+    |    max|            1999.99|             1999.99|
+    +-------+-------------------+--------------------+
+    */
+
+    //To view schema of the DataFrame
+    orders.printSchema()
 
 
+    //register dataframe as a temporary table and run SQL queries
+    orders.createOrReplaceTempView("orders")
 
+    spark.sql("SELECT * FROM orders").show()
+    spark.sql("SELECT order_id, order_date, order_status FROM orders WHERE order_status = 'COMPLETE' GROUP BY order_id, order_date, order_status").show()
 
+    /*
+      NOTE:
+      - SPARK SQL queries are case sensitive by default.
+      - this can be DISABLED
+    */
 
+    spark.conf.set("spark.sql.caseSensitive","true")
   }
 }
